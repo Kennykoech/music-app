@@ -1,0 +1,18 @@
+{% extends 'ngoma/base.html' %}
+{% load staticfiles %}
+{% load static %}
+{% block body %}
+
+{% for song in all_songs %}
+  <div class="caption" >
+      <h4 style="color:#0db0dc;">{{song.artist}}</h4>
+      <h4 style="color:#0db0dc;">{{song.genre}}</h4>
+      <img src="{{song.song_logo.url}}" height="300" width="300"/>
+      <h4 style="color:#0db0dc;">{{song.song_title}}</h4>
+      <a href="{{song.song}}" style="color:#d8ffff;" download>
+        <button type="submit" class="btn btn-primary btn-sm"><h5>Download this song?</h5></button>
+      </a>
+    </div>
+{% endfor %}
+
+{% endblock %} 

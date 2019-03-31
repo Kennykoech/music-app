@@ -1,0 +1,110 @@
+{% load staticfiles %}
+{% load static %}
+<!Doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>{% block title%}kenny{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!---<link rel="https://fonts.googleapis.com/css?family=Satisfy"  rel="stylesheet" type='text/css'>-->
+    <link rel="stylesheet" type="text/css" href="{% static 'ngoma.css'%}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image:url({% static "images/backy.png" %});">
+    <nav class="navbar navbar-default " style="background-color:transparent;">
+            <div class="navbar-header" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>		
+                    </button>
+                <a class="navbar-brand" href="{% url 'ngoma:index' %}"  style="text-color:orange;">kenny</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><form class="navbar-form navbar-left" role="search" method="GET" action="#">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="q" value=""  placeholder="Listen to a music...">
+                            </div>
+                            <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                          </form>
+                        </form></li>
+                        <li class="active"><a href="{% url 'ngoma:index' %}">Home</a></li>                      
+                        <li><a href="#footer"><p  style="text-color:black;">Contact Us</p></a></li>					
+                    </ul>
+                </div>			
+            </div>
+    </nav>
+{% block body %}
+{% endblock %}
+<br><br><br><br>
+<!-- Footer -->
+ <a name="footer"></a>
+<footer class="page-footer font-small cyan light-3">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-12 py-5">
+          <div class="mb-5 flex-center">
+
+            <!-- Facebook -->
+            <h4  style="color:#0db0dc;">Find Me On:</h4>
+            <a href="">
+              <img src="{% static "images/face.jpg"%}" />
+            </a>
+            <!-- Twitter -->
+            <a href="">
+                <img src="{% static "images/twit.jpg"%}" />
+            </a>
+            <!-- Whatsapp-->
+            <a href="">
+                <img src="{% static "images/wats.jpg"%}" />
+            </a>
+            <!--Linkedin -->
+            <a href="">
+                <img src="{% static "images/link.jpg"%}" />
+            </a>
+            <!--Instagram-->
+            <a href="">
+                <img src="{% static "images/insta.jpg"%}" />
+            </a>
+            <!--Skype-->
+            <a href="">
+                <img src="{% static "images/sky.jpg"%}" />
+            </a>
+            <br>
+            <h4 style="color:#0db0dc;">or</h4><br>
+            <h4 style="color:#0db0dc;">Call:0728983163</h4><br>
+            <h4 style="color:#0db0dc;">Email:koechkenny1@gmail.com</h4>
+        </div>
+
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:#70addc;">Copyright©koechkenny
+      <a href=""></a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+</body>
+</html>
+
+
+
+ 

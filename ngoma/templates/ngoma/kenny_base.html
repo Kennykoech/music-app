@@ -1,0 +1,48 @@
+{% load staticfiles %}
+{% load static %}
+<!Doctype html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!---<link rel="https://fonts.googleapis.com/css?family=Satisfy"  rel="stylesheet" type='text/css'>-->
+    <link rel="stylesheet" type="text/css" href="{% static 'kenny_admin.css'%}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image:url({% static "images/admin2.png" %});">
+    <nav class="navbar navbar-default " style="background-color:transparent;">
+            <div class="navbar-header" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>		
+                    </button>
+                <a class="navbar-brand" href="{% url 'ngoma:kenny_index' %}">kenny_admin</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><form class="navbar-form navbar-left" role="search" method="GET" action="#">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="q" value=""  placeholder="Edit music...">
+                            </div>
+                            <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                          </form>
+                        </form></li>
+                        <li class="active"><a href="{% url 'ngoma:kenny_index' %}"><i class="glyphicon glyphicon-home"></i></a></li>                      
+                        <li><a href=""><i class="glyphicon glyphicon-off"></i></a></li>					
+                    </ul>
+                </div>			
+            </div>
+    </nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>
+
+
+
+

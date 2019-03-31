@@ -1,0 +1,34 @@
+{% extends 'ngoma/kenny_base.html' %}
+{% load staticfiles %}
+{% load static %}
+{% block body %}
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                    <h3>Add a song to your collection...</h3>
+                        <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% include 'ngoma/form-template.html' %}
+                            <div class="form-group">
+                                <div class="col-sm-offset2 col-sm-10"> 
+                                    <button type="submit" class="btn btn-success">Add +</button>
+    
+                                </div>
+    
+                            </div>
+    
+                        </form>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+{% endblock %}       

@@ -1,0 +1,24 @@
+{% extends 'ngoma/kenny_base.html' %}
+{% load staticfiles %}
+{% load static %}
+{% block body %}
+
+<h1 style="color:#336791;"><marquee>Song Added succesfully! </marquee></h1>
+<h4><a href="{% url 'ngoma:kenny_index' %}">Go back to homepage...</a></h4>
+  {% for song in all_songs %}
+    <div class="caption" >
+        {{song.artist}}
+        {{song.genre}}
+        <img src="{{song.song_logo.url}}"/>
+        {{song.song_title}}
+        <a href="{% url 'ngoma:detail' song.id %}" class="btn btn-primary btn-sm">View Details</a>
+        <form action="{% url 'ngoma:song-delete' song.id %}" method="POST" style="display: inline;">
+          {%csrf_token%}
+          <input type="hidden" name="song_id" value="{{song.id}}"/>
+          <button type="submit" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-trash"></span>
+          </button>
+    
+        </form>
+  {% endfor %}
+{% endblock %}
